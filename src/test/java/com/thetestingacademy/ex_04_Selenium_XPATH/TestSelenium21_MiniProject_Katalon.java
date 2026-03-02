@@ -43,9 +43,19 @@ public class TestSelenium21_MiniProject_Katalon extends CommonToAll {
         WebElement login_button = driver.findElement(By.xpath("//button[text()=\"Login\"]"));
         login_button.click();
 
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         //input[@id="chk_hospotal_readmission"]
         WebElement checkbox = driver.findElement(By.xpath("//input[@id=\"chk_hospotal_readmission\"]"));
         checkbox.click();
+
+        //input[@id="radio_program_medicaid"]
+        WebElement radioButton = driver.findElement(By.xpath("//input[@id=\"radio_program_medicaid\"]"));
+        radioButton.click();
 
     }
 }
