@@ -63,7 +63,7 @@ public class Lab_OrangeHRM {
 
         //span[text()="Log Out"]
 
-        Thread.sleep(5000);
+        Thread.sleep(4000);
 
         WebElement logOut = driver.findElement(By.xpath("//span[text()=\"Log Out\"]"));
         logOut.click();
