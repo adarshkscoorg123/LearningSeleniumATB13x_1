@@ -15,7 +15,7 @@ public class Lab_OrangeHRM {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = new ChromeDriver();
-        driver.get("https://adarshks-trials719.orangehrmlive.com/auth/seamlessLogin");
+        driver.get("https://adarshkssuresh-trials80.orangehrmlive.com/");
         driver.manage().window().maximize();
 
         WebElement userName = driver.findElement(By.xpath("//input[@id = \"txtUsername\"]"));
@@ -24,27 +24,32 @@ public class Lab_OrangeHRM {
         //input[@id = "txtPassword"]
 
         WebElement password = driver.findElement(By.xpath("//input[@id = \"txtPassword\"]"));
-        password.sendKeys("J8Oqg@G6iY");
+        password.sendKeys("oN07dG@QqV");
 
         //button[text() ="Login"]
 
         WebElement login_button = driver.findElement(By.xpath("//button[text() =\"Login\"]"));
         login_button.click();
+
+        Thread.sleep(5000);
         //login_button.submit();
 
         //a[normalize-space()="Employee List"]
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()=\"Employee List\"]")));
 
 
         WebElement employeeList = driver.findElement(By.xpath("//a[normalize-space()=\"Employee List\"]"));
         employeeList.click();
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
 
         //table[@id ="employeeListTable"]-'Table'
         //table[@id ="employeeListTable"]/tbody- Table body
+
+        WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait2.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id =\"employeeListTable\"]/tbody")));
 
         WebElement table = driver.findElement(By.xpath("//table[@id =\"employeeListTable\"]/tbody"));
 
@@ -65,8 +70,9 @@ public class Lab_OrangeHRM {
 
         Thread.sleep(4000);
 
-        WebElement logOut = driver.findElement(By.xpath("//span[text()=\"Log Out\"]"));
-        logOut.click();
+        //WebElement logOut = driver.findElement(By.xpath("//span[text()=\"Log Out\"]"));
+        //logOut.click();
 
     }
+
 }
